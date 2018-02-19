@@ -1,0 +1,2 @@
+# DyxCoin
+Dynamics Coin
