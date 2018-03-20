@@ -1,0 +1,34 @@
+src/*.exe
+src/DynamicsCoin
+src/DynamicsCoind
+src/test_DynamicsCoin
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+.DynamicsCoin
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+DynamicsCoin-qt
+DynamicsCoin-Qt.app
+
+# Unit-tests
+Makefile.test
+DynamicsCoin-qt_test
+
+# Resources cpp
+qrc_*.cpp
+
+# Qt creator
+*.pro.user
+
+# Mac specific
+.DS_Store
+build
+
+!src/leveldb*/Makefile
