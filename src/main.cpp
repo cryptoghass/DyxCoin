@@ -1072,8 +1072,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 	if (nHeight > 64*500000)
 		return nFees;
 		
+		
 	if (nHeight == 1)
 		return 10000000 * COIN;
+	if (nHeight == 2)
+		return 1 * COIN;
+	if (nHeight == 3)
+		return 2000000 * COIN;
+		
 
     return nSubsidy + nFees;
 }
@@ -2795,12 +2801,13 @@ bool InitBlockIndex() {
 
         if (fTestNet)
         {
-            block.nTime    = 1394723194;
+            block.nTime    = 1519334559;
             block.nNonce   = 1284927160;
         }
 		
 		// debug print
-        hashGenesisBlock = block.GetHash();
+		if (!fTestNet){
+        hashGenesisBlock = block.GetHash();}
 		
         //// debug print
         uint256 hash = block.GetHash();
@@ -3101,7 +3108,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfe, 0xc3, 0xba, 0xd3 }; // DynamicsCoin: increase each by adding 6 to bitcoin's value.
+unsigned char pchMessageStart[4] = { 0xfa, 0xc4, 0xbe, 0xd3 }; // DynamicsCoin: increase each by adding 6 to bitcoin's value.
 
 
 void static ProcessGetData(CNode* pfrom)
